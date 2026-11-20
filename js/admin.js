@@ -25,6 +25,10 @@ function stockStatus(product) {
   return ['Disponível', 'stock-available'];
 }
 
+function isValidAmount(amount) {
+  return Number.isInteger(amount) && amount >= 1;
+}
+
 function cell(row, text) {
   const element = document.createElement('td');
   element.textContent = text;
@@ -66,8 +70,8 @@ function renderRows() {
     const amount = Number(document.querySelector('#stock-amount').value);
     actions.append(
       actionButton('Editar', 'table-button', () => startEdit(product)),
-      actionButton('+ Estoque', 'table-button', () => changeStock(product, amount), !Number.isInteger(amount) || amount < 1),
-      actionButton('− Estoque', 'table-button', () => changeStock(product, -amount), !Number.isInteger(amount) || amount < 1 || product.stock < amount),
+      actionButton('+ Estoque', 'table-button', () => changeStock(product, amount), !isValidAmount(amount)),
+      actionButton('− Estoque', 'table-button', () => changeStock(product, -amount), !isValidAmount(amount) || product.stock < amount),
       actionButton('Excluir', 'table-button danger-button', () => removeProduct(product)),
     );
     row.append(actions);
@@ -106,8 +110,16 @@ function resetForm() {
 }
 
 async function changeStock(product, adjustment) {
+  // O botão é reabilitado a cada render, mas o valor pode mudar entre o clique e a resposta:
+  // repetir a checagem aqui evita gravar estoque negativo ou fracionário na API.
+  if (!isValidAmount(Math.abs(adjustment))) return;
+  const nextStock = product.stock + adjustment;
+  if (!Number.isInteger(nextStock) || nextStock < 0) {
+    setStatus('Quantidade inválida para a baixa de estoque.', true);
+    return;
+  }
   try {
-    const updated = await updateProduct(product.id, { stock: product.stock + adjustment });
+    const updated = await updateProduct(product.id, { stock: nextStock });
     products = products.map((item) => item.id === product.id ? updated : item);
     renderRows();
     setStatus(`Estoque de "${product.name}" atualizado.`);
@@ -133,6 +145,9 @@ async function uploadImage(file) {
   if (!cloudinaryCloudName || !cloudinaryUploadPreset) {
     throw new Error('Configure cloudinaryCloudName e cloudinaryUploadPreset em js/config.js ou informe uma URL HTTPS.');
   }
+  // A troca do nome do arquivo ao lado do botão não dispara 'change' se for o mesmo arquivo:
+  // limpar o input garante que reenviar a mesma imagem volte a funcionar.
+  fileInput.value = '';
   const body = new FormData();
   body.append('file', file);
   body.append('upload_preset', cloudinaryUploadPreset);

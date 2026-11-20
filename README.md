@@ -3,6 +3,9 @@ Atividade SSO - Professor Leonid
 
 Loja demonstrativa de itens de RPG, anime e cultura geek. A vitrine e o painel administrativo usam HTML, CSS e JavaScript puro; o catálogo e o estoque são servidos pelo json-server.
 
+Passo a passo dificultoso 
+
+1- 
 ## Executar localmente
 
 Requisitos: Node.js 24 ou superior e npm.
@@ -13,6 +16,7 @@ Instale as dependências:
 npm install
 npm --prefix api install
 ```
+2-
 
 Inicie a API em um terminal:
 

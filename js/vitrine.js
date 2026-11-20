@@ -117,7 +117,10 @@ function showDetails(product) {
     detail.append(node('div', 'detail-emoji', product.emoji || '✨'));
   }
   detail.append(node('p', 'eyebrow', product.category.toLocaleUpperCase('pt-BR')));
-  detail.append(node('h2', '', product.name));
+  // O diálogo usa aria-labelledby="detail-title"; sem este id o título não era anunciado por leitores de tela.
+  const title = node('h2', '', product.name);
+  title.id = 'detail-title';
+  detail.append(title);
   detail.append(node('p', 'detail-description', product.description));
   const stock = stockStatus(product);
   detail.append(node('p', `stock-status ${stock.className}`, `${stock.text} · ${product.stock} em estoque`));

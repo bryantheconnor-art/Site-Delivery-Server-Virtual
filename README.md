@@ -58,7 +58,7 @@ O serviço `api` também pode ser publicado separadamente no Render usando a pas
 
 ## GitHub Pages e VM
 
-O workflow `.github/workflows/pages.yml` publica a vitrine e o painel quando há push para `main`. No GitHub, habilite *Settings → Pages → Build and deployment → GitHub Actions*. Antes da publicação, configure a URL pública HTTPS da API Render em `js/config.js`. GitHub Pages não hospeda o json-server; a API precisa estar em outro serviço.
+O workflow `.github/workflows/pages.yml` publica a vitrine e o painel quando há push para `main`. No GitHub, habilite *Settings → Pages → Build and deployment → GitHub Actions*. GitHub Pages não hospeda o json-server; sem uma API pública configurada em `js/config.js`, a vitrine usa `api/db.json` como catálogo somente para leitura. O painel administrativo continua precisando da API para salvar alterações.
 
 Para executar em uma VM com Docker, clone o repositório e use `docker compose up --build -d`. Libere apenas as portas necessárias na rede autorizada. O json-server deste projeto é uma API de demonstração sem autenticação e permite alterar o catálogo; não use dados reais nem o exponha publicamente sem controles de acesso apropriados.
 

@@ -57,7 +57,7 @@ O workflow `.github/workflows/pages.yml` publica a vitrine e o painel quando há
 
 Para executar em uma VM com Docker, clone o repositório e use `docker compose up --build -d`. Libere apenas as portas necessárias na rede autorizada. O json-server deste projeto é uma API de demonstração sem autenticação e permite alterar o catálogo; não use dados reais nem o exponha publicamente sem controles de acesso apropriados.
 
-O roteiro da atividade de infraestrutura está em [`docs/SSO-checklist.md`](./docs/SSO-checklist.md). DHCP, DNS, IIS e a configuração das VMs precisam ser realizados e comprovados no ambiente real; o repositório não afirma que esses serviços já estejam configurados. Preencha o roteiro com os dados do laboratório, inclua capturas e exporte o PDF para anexar à Issue pertinente.
+O roteiro da atividade de infraestrutura está em [`docs/SSO-checklist.md`](./docs/SSO-checklist.md) e o relatório completo (Markdown e PDF) em [`docs/relatorio-sso.md`](./docs/relatorio-sso.md). DHCP, DNS, IIS e a configuração das VMs precisam ser realizados e comprovados no ambiente real; o repositório não afirma que esses serviços já estejam configurados. Preencha o roteiro com os dados do laboratório, inclua capturas e exporte o PDF para anexar à Issue pertinente.
 
 ## Cloudinary
 

@@ -1,4 +1,10 @@
-# Relatório de Infraestrutura — SSO
+# Roteiro de evidências — SSO
+
+> **Versão completa deste roteiro:** [`relatorio-sso.md`](./relatorio-sso.md), também gerado em PDF em
+> [`relatorio-sso.pdf`](./relatorio-sso.pdf). Este arquivo mantém o resumo original; use o relatório
+> completo como documento principal da entrega.
+
+---
 
 **Projeto Integrado:** Sistema de Gestão de Catálogo e Estoque de Delivery
 **Disciplinas:** Servidores e Sistemas Operacionais (SSO) & Programação de Sítios Internet (PSI)

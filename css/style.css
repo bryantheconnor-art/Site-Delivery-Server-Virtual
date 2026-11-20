@@ -363,8 +363,10 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 @media (max-width: 390px) {
-  .brand { font-size: 15px; }
-  .main-nav { gap: 10px; }
+  .site-header { padding: 0 14px; }
+  .brand { gap: 6px; font-size: 14px; white-space: nowrap; }
+  .brand-mark { width: 28px; height: 28px; }
+  .main-nav { gap: 8px; font-size: 10px; }
   .hero h1 { font-size: 41px; }
   .product-grid { grid-template-columns: 1fr; }
   .product-art { height: 180px; }

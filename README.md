@@ -49,7 +49,7 @@ Vitrine: <http://localhost:3000>. API: <http://localhost:3001/products>. Para en
 docker compose down
 ```
 
-O serviço `api` também pode ser publicado separadamente no Render usando a pasta `api` como *Root Directory* e o ambiente Docker. Configure `apiBaseUrl` em `js/config.js` com a URL HTTPS pública da API antes de publicar a vitrine.
+O serviço `api` também pode ser publicado separadamente no Render usando a pasta `api` como *Root Directory* e o ambiente Docker. Configure `apiBaseUrl` em `js/config.js` com a URL HTTPS pública da API antes de publicar a vitrine. O passo a passo está em [`docs/render-deploy.md`](./docs/render-deploy.md).
 
 ## GitHub Pages e VM
 

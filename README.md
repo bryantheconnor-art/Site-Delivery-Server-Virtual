@@ -53,9 +53,15 @@ O serviço `api` também pode ser publicado separadamente no Render usando a pas
 
 ## GitHub Pages e VM
 
-O front-end estático pode ser publicado no GitHub Pages na raiz do repositório, após configurar a URL pública da API em `js/config.js`. GitHub Pages não hospeda o json-server; a API precisa estar em outro serviço.
+O workflow `.github/workflows/pages.yml` publica a vitrine e o painel quando há push para `main`. No GitHub, habilite *Settings → Pages → Build and deployment → GitHub Actions*. Antes da publicação, configure a URL pública HTTPS da API Render em `js/config.js`. GitHub Pages não hospeda o json-server; a API precisa estar em outro serviço.
 
 Para executar em uma VM com Docker, clone o repositório e use `docker compose up --build -d`. Libere apenas as portas necessárias na rede autorizada. O json-server deste projeto é uma API de demonstração sem autenticação e permite alterar o catálogo; não use dados reais nem o exponha publicamente sem controles de acesso apropriados.
+
+O roteiro da atividade de infraestrutura está em [`docs/SSO-checklist.md`](./docs/SSO-checklist.md). DHCP, DNS, IIS e a configuração das VMs precisam ser realizados e comprovados no ambiente real; o repositório não afirma que esses serviços já estejam configurados. Preencha o roteiro com os dados do laboratório, inclua capturas e exporte o PDF para anexar à Issue pertinente.
+
+## Cloudinary
+
+O endereço do console não é o `cloud_name` nem o nome do preset. Obtenha o cloud name no painel de detalhes da conta e crie/consulte um preset de upload *unsigned* em **Settings → Upload → Upload presets**. Preencha somente esses dois valores públicos em `js/config.js`; nunca coloque a API secret no front-end. A URL de `apiBaseUrl` deve ser a URL do serviço json-server no Render, não uma página de documentação.
 
 ## Verificações
 

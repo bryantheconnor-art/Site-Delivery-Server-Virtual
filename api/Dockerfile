@@ -4,8 +4,8 @@ ENV NODE_ENV=production
 ENV PORT=3001
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm ci --omit=dev
+COPY package.json ./
+RUN npm install --omit=dev
 COPY --chown=node:node db.json server.js ./
 
 USER node

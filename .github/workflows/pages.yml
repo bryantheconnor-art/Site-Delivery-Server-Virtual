@@ -30,7 +30,10 @@ jobs:
           mkdir -p _site/assets _site/imagens _site/css _site/js
           cp index.html admin.html _site/
           cp assets/* _site/assets/
-          cp imagens/* _site/imagens/
+          cp imagens/produto-arch-linux-tratada.webp _site/imagens/
+          cp imagens/produto-kit-streetwear-tratada.webp _site/imagens/
+          cp imagens/produto-livro-cpp-tratada.webp _site/imagens/
+          cp imagens/produto-traje-tatico-tratada.webp _site/imagens/
           cp css/style.css _site/css/
           cp js/*.js _site/js/
       - name: Carregar artefato

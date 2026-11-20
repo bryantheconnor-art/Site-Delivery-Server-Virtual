@@ -112,7 +112,10 @@ function resetForm() {
 async function changeStock(product, adjustment) {
   // O botão é reabilitado a cada render, mas o valor pode mudar entre o clique e a resposta:
   // repetir a checagem aqui evita gravar estoque negativo ou fracionário na API.
-  if (!isValidAmount(Math.abs(adjustment))) return;
+  if (!isValidAmount(Math.abs(adjustment))) {
+    setStatus('Informe uma quantidade inteira maior que zero.', true);
+    return;
+  }
   const nextStock = product.stock + adjustment;
   if (!Number.isInteger(nextStock) || nextStock < 0) {
     setStatus('Quantidade inválida para a baixa de estoque.', true);

@@ -1,4 +1,4 @@
-# Nexo Geek - Bryan da Silva 
+# Anexo Geek - Bryan da Silva 
 Atividade SSO - Professor Leonid
 
 Loja demonstrativa de itens de RPG, anime e cultura geek. A vitrine e o painel administrativo usam HTML, CSS e JavaScript puro; o catálogo e o estoque são servidos pelo json-server.

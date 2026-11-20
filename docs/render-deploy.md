@@ -18,7 +18,7 @@ no Render, a partir da pasta `api/` deste repositório.
 
 | Campo | Valor |
 | --- | --- |
-| Name | `nexo-geek-api` (ou outro nome livre) |
+| Name | `anexo-nerd-api` (ou outro nome livre) |
 | Language / Runtime | **Docker** |
 | Branch | `main` |
 | Root Directory | `api` |
@@ -26,12 +26,12 @@ no Render, a partir da pasta `api/` deste repositório.
 | Instance Type | Free |
 | Auto-Deploy | **Yes** (cada push em `main` recompila) |
 
-4. Clicar em **Deploy Web Service** e acompanhar o log até `API Nexo Geek disponível na porta ...`.
+4. Clicar em **Deploy Web Service** e acompanhar o log até `API Anexo Nerd disponível na porta ...`.
 
 ## 3. Conferir a publicação
 
 Troque `<url>` pela URL HTTPS que o Render mostrar no topo do serviço
-(`https://nexo-geek-api.onrender.com`, por exemplo):
+(`https://anexo-nerd-api.onrender.com`, por exemplo):
 
 ```bash
 curl https://<url>/products

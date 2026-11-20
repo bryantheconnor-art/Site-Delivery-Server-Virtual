@@ -1,6 +1,6 @@
 # Relatório de Infraestrutura — Servidores e Sistemas Operacionais (SSO)
 
-**Projeto Integrado:** Sistema de Gestão de Catálogo e Estoque de Delivery — *Nexo Geek*
+**Projeto Integrado:** Sistema de Gestão de Catálogo e Estoque de Delivery — *Anexo Nerd*
 **Disciplinas:** Servidores e Sistemas Operacionais (SSO) & Programação de Sítios Internet (PSI)
 **Instituição:** FATEC São Roque
 **Responsável por este relatório:** Bryan da Silva
@@ -13,19 +13,9 @@ O projeto integrado das disciplinas de SSO e PSI consiste em um sistema web de g
 estoque de delivery, apoiado por uma infraestrutura de rede local com serviços corporativos e
 consumindo uma API hospedada em nuvem.
 
-A identidade da Nexo Geek celebra a cultura geek e o cinema, reunindo referências a RPG de mesa,
+A identidade da Anexo Nerd celebra a cultura geek e o cinema, reunindo referências a RPG de mesa,
 anime, games, ficção científica, fantasia, animações, séries e filmes. A vitrine foi pensada para
 fãs que procuram acessórios, presentes e itens colecionáveis ligados a esses universos.
-
-### Recorte geek e cinematográfico do catálogo
-
-- **RPG e fantasia:** dados do aventureiro e diário do mestre, voltados a campanhas e narrativas.
-- **Anime e mangá:** figure de coleção e kit de leitura para fãs de animação e quadrinhos japoneses.
-- **Ficção científica e games:** caneca de missão espacial e luminária pixel, com referências a
-  universos de cinema, séries e jogos.
-
-Esse recorte conecta os produtos demonstrativos ao público geek e pode crescer com novas categorias
-de cinema e séries sem alterar a proposta de controle de catálogo e estoque.
 
 - **SSO:** configuração de um Windows Server (rede interna/Host-Only) provendo DHCP e DNS para o
   domínio local `.empresa.p2.br` e o IIS para hospedagem e testes de serviços; um Windows Cliente com

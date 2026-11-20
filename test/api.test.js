@@ -25,7 +25,7 @@ test('catálogo JSON tem IDs únicos e níveis de estoque válidos', async () =>
 });
 
 test('API json-server permite listar, cadastrar, atualizar e excluir produtos', async (t) => {
-  const directory = await mkdtemp(path.join(os.tmpdir(), 'nexo-geek-api-'));
+  const directory = await mkdtemp(path.join(os.tmpdir(), 'anexo-nerd-api-'));
   const database = path.join(directory, 'db.json');
   await copyFile(catalogPath, database);
   const server = createApp(database).listen(0, '127.0.0.1');

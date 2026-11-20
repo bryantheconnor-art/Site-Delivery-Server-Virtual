@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+  <path d="M80 6 132 28 153 80 132 132 80 154 28 132 7 80 28 28 80 6Z" fill="#168047" stroke="#D4F2D9" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M80 6 105 42 132 28 116 69 153 80 112 91 132 132 91 111 80 154 69 111 28 132 48 91 7 80 48 69 28 28 55 42 80 6Z" fill="#36A85D" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 6 105 42 80 78 55 42 80 6Z" fill="#72C982" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M48 69 80 78 48 91 7 80 48 69Z" fill="#0F6337" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M105 42 132 28 116 69 80 78 105 42Z" fill="#26954D" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 78 112 91 91 111 69 111 48 91 80 78Z" fill="#0F6337" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 78 116 69 153 80 112 91 80 78Z" fill="#43B866" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M80 78 91 111 80 154 69 111 80 78Z" fill="#168047" stroke="#D4F2D9" stroke-width="3" stroke-linejoin="round"/>
+  <text x="80" y="91" text-anchor="middle" fill="#F2FFE8" font-family="Arial, sans-serif" font-size="35" font-weight="800">20</text>
+</svg>

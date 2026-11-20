@@ -27,8 +27,9 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Montar arquivos estáticos
         run: |
-          mkdir -p _site/css _site/js
+          mkdir -p _site/assets _site/css _site/js
           cp index.html admin.html _site/
+          cp assets/* _site/assets/
           cp css/style.css _site/css/
           cp js/*.js _site/js/
       - name: Carregar artefato

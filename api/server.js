@@ -16,6 +16,6 @@ export function createApp(databaseFile = process.env.DB_FILE || path.join(direct
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT) || 3001;
   createApp().listen(port, '0.0.0.0', () => {
-    console.log(`API Nexo Geek disponível na porta ${port}.`);
+    console.log(`API Anexo Nerd disponível na porta ${port}.`);
   });
 }

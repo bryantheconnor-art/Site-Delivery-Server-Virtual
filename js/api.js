@@ -23,6 +23,7 @@ export async function request(path, options = {}) {
 }
 
 export const getProducts = () => request('/products?_sort=name');
+export const getDelivery = () => request('/delivery');
 export const createProduct = (product) =>
   request('/products', { method: 'POST', body: JSON.stringify(product) });
 export const replaceProduct = (id, product) =>
@@ -34,6 +35,8 @@ export const deleteProduct = (id) =>
 
 export function getImageUrl(value) {
   if (!value) return '';
+  const localImage = /^(?:\.\/)?(?:imagens|assets)\/[a-z0-9._-]+\.(?:avif|gif|jpe?g|png|svg|webp)$/i;
+  if (localImage.test(value)) return new URL(value, document.baseURI).href;
   try {
     const url = new URL(value);
     return url.protocol === 'https:' ? url.href : '';

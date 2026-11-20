@@ -1,4 +1,4 @@
-import { getImageUrl, getProducts } from './api.js';
+import { getDelivery, getImageUrl, getProducts } from './api.js';
 
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
 const grid = document.querySelector('#product-grid');
@@ -20,6 +20,25 @@ function node(tag, className, text) {
 
 function price(cents) {
   return money.format(cents / 100);
+}
+
+function renderDelivery(delivery) {
+  const subtitle = document.querySelector('#delivery-subtitle');
+  const options = document.querySelector('#delivery-options');
+  const note = document.querySelector('#delivery-note');
+  subtitle.textContent = delivery.subtitle || 'Consulte prazo e disponibilidade para o seu endereço.';
+  options.replaceChildren();
+
+  for (const option of delivery.options || []) {
+    const card = node('article', 'delivery-option');
+    card.append(node('h3', '', option.name));
+    card.append(node('strong', 'delivery-price', option.priceCents === 0 ? 'Grátis' : price(option.priceCents)));
+    card.append(node('p', 'delivery-eta', option.eta));
+    card.append(node('p', 'delivery-option-description', option.description));
+    options.append(card);
+  }
+
+  note.textContent = delivery.note || 'Consulte disponibilidade, taxa e prazo para a sua região.';
 }
 
 function stockStatus(product) {
@@ -49,7 +68,7 @@ function renderProducts() {
   const term = search.value.trim().toLocaleLowerCase('pt-BR');
   const visible = products.filter((product) => {
     const matchesCategory = selectedCategory === 'Todos' || product.category === selectedCategory;
-    const matchesSearch = `${product.name} ${product.description} ${product.category}`
+    const matchesSearch = `${product.name} ${product.caption || ''} ${product.description} ${product.category}`
       .toLocaleLowerCase('pt-BR').includes(term);
     return matchesCategory && matchesSearch;
   });
@@ -82,6 +101,7 @@ function productCard(product, index) {
   const stock = stockStatus(product);
   meta.append(node('span', `stock-status ${stock.className}`, stock.text));
   const title = node('h3', '', product.name);
+  const caption = product.caption ? node('p', 'product-caption', product.caption) : null;
   const description = node('p', 'product-description', product.description);
   const footer = node('div', 'product-footer');
   footer.append(node('strong', '', price(product.priceCents)));
@@ -100,7 +120,9 @@ function productCard(product, index) {
   });
   actions.append(details, add);
   footer.append(actions);
-  card.append(art, meta, title, description, footer);
+  card.append(art, meta, title);
+  if (caption) card.append(caption);
+  card.append(description, footer);
   return card;
 }
 
@@ -121,7 +143,7 @@ function showDetails(product) {
   const title = node('h2', '', product.name);
   title.id = 'detail-title';
   detail.append(title);
-  detail.append(node('p', 'detail-description', product.description));
+  if (product.caption) detail.append(node('p', 'detail-caption', product.caption));
   const stock = stockStatus(product);
   detail.append(node('p', `stock-status ${stock.className}`, `${stock.text} · ${product.stock} em estoque`));
   detail.append(node('strong', 'detail-price', price(product.priceCents)));
@@ -189,6 +211,9 @@ function renderCart() {
 }
 
 search.addEventListener('input', renderProducts);
+getDelivery().then(renderDelivery).catch(() => {
+  document.querySelector('#delivery-note').textContent = 'Não foi possível carregar as opções de entrega agora.';
+});
 document.querySelector('#open-cart').addEventListener('click', () => {
   renderCart();
   cartDialog.showModal();

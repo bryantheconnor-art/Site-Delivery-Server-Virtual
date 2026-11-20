@@ -87,6 +87,7 @@ function startEdit(product) {
   field('id').value = product.id;
   field('name').value = product.name;
   field('category').value = product.category;
+  field('caption').value = product.caption || '';
   field('price').value = (product.priceCents / 100).toFixed(2);
   field('stock').value = product.stock;
   field('minStock').value = product.minStock;
@@ -188,13 +189,14 @@ form.addEventListener('submit', async (event) => {
   const data = new FormData(form);
   const imageUrl = String(data.get('imageUrl') || '').trim();
   if (imageUrl && !getImageUrl(imageUrl)) {
-    setStatus('A imagem precisa usar uma URL HTTPS válida.', true);
+    setStatus('Use uma URL HTTPS pública ou um arquivo dentro de imagens/.', true);
     saveButton.disabled = false;
     return;
   }
   const product = {
     name: String(data.get('name')).trim(),
     category: String(data.get('category')).trim(),
+    caption: String(data.get('caption') || '').trim(),
     description: String(data.get('description')).trim(),
     priceCents: Math.round(Number(data.get('price')) * 100),
     stock: Number(data.get('stock')),

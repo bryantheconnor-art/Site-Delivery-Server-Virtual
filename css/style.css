@@ -253,6 +253,7 @@ h1, h2, h3, p { margin-top: 0; }
 .product-rating { color: #e69b4f; }
 .product-rating span { color: #aaa5af; font-size: 8px; font-weight: 500; letter-spacing: 0; text-transform: none; }
 .product-card h3 { margin: 0 3px 5px; font: 600 15px 'Space Grotesk', sans-serif; }
+.product-caption { margin: 0 3px 5px; color: #267a47; font-size: 11px; font-weight: 600; line-height: 1.5; }
 .product-description { min-height: 32px; margin: 0 3px 14px; color: #8b8791; font-size: 10px; line-height: 1.6; }
 .product-footer { display: flex; align-items: center; justify-content: space-between; margin: 0 3px; }
 .product-footer strong { font: 700 14px 'Space Grotesk', sans-serif; }
@@ -276,6 +277,17 @@ h1, h2, h3, p { margin-top: 0; }
 .banner-icon { display: grid; width: 78px; height: 78px; place-items: center; border-radius: 50%; background: #fff; font-size: 36px; }
 .delivery-banner .eyebrow { margin-bottom: 9px; color: #347c4c; }
 .delivery-banner h2 { font-size: 25px; }
+.delivery-copy { max-width: 520px; margin: 10px 0 0; color: #347c4c; font-size: 12px; line-height: 1.6; }
+.delivery-section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 22px; }
+.delivery-section-heading .eyebrow { margin-bottom: 10px; color: #347c4c; }
+.delivery-section-heading h2 { margin: 0; font: 600 clamp(27px, 3vw, 37px)/1.2 'Space Grotesk', sans-serif; }
+.delivery-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.delivery-option { padding: 20px; border: 1px solid #dceadf; border-radius: 9px; background: #fff; }
+.delivery-option h3 { margin: 0 0 8px; font: 600 16px 'Space Grotesk', sans-serif; }
+.delivery-price { display: block; margin-bottom: 6px; color: #167a41; font: 700 18px 'Space Grotesk', sans-serif; }
+.delivery-eta { margin: 0 0 8px; color: #347c4c; font-size: 12px; font-weight: 700; }
+.delivery-option-description { margin: 0; color: #718173; font-size: 11px; line-height: 1.6; }
+.delivery-note { margin: 16px 0 0; color: #718173; font-size: 11px; line-height: 1.6; }
 .banner-link { display: flex; align-items: center; gap: 18px; margin-left: auto; padding: 12px 15px; border-radius: 6px; background: #167a41; color: white; font-size: 10px; font-weight: 700; }
 .banner-link:hover { background: #125d31; }
 
@@ -354,6 +366,7 @@ h1, h2, h3, p { margin-top: 0; }
   .product-rating span { display: none; }
   .product-footer { align-items: start; flex-direction: column; gap: 9px; }
   .delivery-banner { align-items: start; flex-wrap: wrap; gap: 15px; margin: 0 20px 55px; padding: 25px; }
+  .delivery-options { grid-template-columns: 1fr; }
   .banner-icon { width: 55px; height: 55px; font-size: 27px; }
   .delivery-banner h2 { font-size: 21px; }
   .banner-link { margin: 5px 0 0; }
@@ -392,6 +405,7 @@ h1, h2, h3, p { margin-top: 0; }
 #product-detail .eyebrow { margin-bottom: 8px; color: #27794a; }
 #product-detail h2 { margin: 0 0 9px; font: 600 24px 'Space Grotesk', sans-serif; }
 .detail-description { color: #85808c; font-size: 13px; line-height: 1.7; }
+.detail-caption { margin: 0 0 8px; color: #267a47; font-size: 13px; font-weight: 600; line-height: 1.5; }
 .detail-price { display: block; margin-top: 20px; font: 700 20px 'Space Grotesk', sans-serif; }
 .cart-dialog { width: min(440px, 100%); height: min(100%, 100vh); max-height: 100vh; margin: 0 0 0 auto; border-radius: 10px 0 0 10px; }
 .cart-dialog[open] { display: flex; }

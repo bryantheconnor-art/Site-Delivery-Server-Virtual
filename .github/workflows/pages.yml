@@ -27,13 +27,15 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Montar arquivos estáticos
         run: |
-          mkdir -p _site/assets _site/imagens _site/css _site/js
+          mkdir -p _site/assets _site/imagens _site/css _site/js _site/api
           cp index.html admin.html _site/
           cp assets/* _site/assets/
           cp imagens/produto-arch-linux-tratada.webp _site/imagens/
           cp imagens/produto-kit-streetwear-tratada.webp _site/imagens/
           cp imagens/produto-livro-cpp-tratada.webp _site/imagens/
           cp imagens/produto-traje-tatico-tratada.webp _site/imagens/
+          cp imagens/poster-arch-linux.jpeg _site/imagens/
+          cp api/db.json _site/api/
           cp css/style.css _site/css/
           cp js/*.js _site/js/
       - name: Carregar artefato

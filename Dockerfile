@@ -7,6 +7,8 @@ COPY imagens/produto-arch-linux-tratada.webp /usr/share/nginx/html/imagens/
 COPY imagens/produto-kit-streetwear-tratada.webp /usr/share/nginx/html/imagens/
 COPY imagens/produto-livro-cpp-tratada.webp /usr/share/nginx/html/imagens/
 COPY imagens/produto-traje-tatico-tratada.webp /usr/share/nginx/html/imagens/
+COPY imagens/poster-arch-linux.jpeg /usr/share/nginx/html/imagens/
+COPY api/db.json /usr/share/nginx/html/api/db.json
 COPY css/ /usr/share/nginx/html/css/
 COPY js/ /usr/share/nginx/html/js/
 

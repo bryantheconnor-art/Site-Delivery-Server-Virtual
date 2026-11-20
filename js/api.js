@@ -22,8 +22,31 @@ export async function request(path, options = {}) {
   return response.json();
 }
 
-export const getProducts = () => request('/products?_sort=name');
-export const getDelivery = () => request('/delivery');
+async function getStaticCatalog() {
+  const response = await fetch('./api/db.json');
+  if (!response.ok) throw new Error('O catálogo local não pôde ser carregado.');
+  return response.json();
+}
+
+export async function getProducts() {
+  try {
+    return await request('/products?_sort=name');
+  } catch (error) {
+    const catalog = await getStaticCatalog();
+    if (!Array.isArray(catalog.products)) throw error;
+    return [...catalog.products].sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+  }
+}
+
+export async function getDelivery() {
+  try {
+    return await request('/delivery');
+  } catch (error) {
+    const catalog = await getStaticCatalog();
+    if (!catalog.delivery) throw error;
+    return catalog.delivery;
+  }
+}
 export const createProduct = (product) =>
   request('/products', { method: 'POST', body: JSON.stringify(product) });
 export const replaceProduct = (id, product) =>

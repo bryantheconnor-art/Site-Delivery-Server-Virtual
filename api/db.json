@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": "dice-set",
+      "name": "Dados do aventureiro",
+      "category": "RPG",
+      "description": "Conjunto de 7 dados para sua próxima campanha.",
+      "priceCents": 4590,
+      "emoji": "🎲",
+      "badge": "Mais pedido",
+      "stock": 15,
+      "minStock": 3,
+      "imageUrl": ""
+    },
+    {
+      "id": "dragon-notebook",
+      "name": "Diário do mestre",
+      "category": "RPG",
+      "description": "Caderno para mapas, fichas e grandes histórias.",
+      "priceCents": 5890,
+      "emoji": "📓",
+      "badge": "Para sua mesa",
+      "stock": 7,
+      "minStock": 2,
+      "imageUrl": ""
+    },
+    {
+      "id": "cat-figure",
+      "name": "Figure gato mágico",
+      "category": "Anime",
+      "description": "Um toque de fantasia para sua estante.",
+      "priceCents": 8990,
+      "emoji": "🐈‍⬛",
+      "badge": "Novo",
+      "stock": 2,
+      "minStock": 3,
+      "imageUrl": ""
+    },
+    {
+      "id": "manga-kit",
+      "name": "Kit leitura manga",
+      "category": "Anime",
+      "description": "Marcador e acessórios para acompanhar sua coleção.",
+      "priceCents": 3990,
+      "emoji": "📚",
+      "badge": "",
+      "stock": 0,
+      "minStock": 2,
+      "imageUrl": ""
+    },
+    {
+      "id": "space-mug",
+      "name": "Caneca missão espacial",
+      "category": "Geek",
+      "description": "Café e ficção científica combinam demais.",
+      "priceCents": 6490,
+      "emoji": "🚀",
+      "badge": "Favorito",
+      "stock": 12,
+      "minStock": 3,
+      "imageUrl": ""
+    },
+    {
+      "id": "pixel-lamp",
+      "name": "Luminária pixel",
+      "category": "Geek",
+      "description": "Luz aconchegante para sua área de jogos.",
+      "priceCents": 11990,
+      "emoji": "👾",
+      "badge": "",
+      "stock": 5,
+      "minStock": 2,
+      "imageUrl": ""
+    }
+  ]
+}

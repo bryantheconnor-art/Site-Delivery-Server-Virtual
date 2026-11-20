@@ -2,16 +2,89 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#171323" />
-    <meta
-      name="description"
-      content="Sua próxima aventura geek chega até você. Encontre itens de RPG, anime e cultura pop."
-    />
+    <meta name="description" content="Itens de RPG, anime e cultura geek com entrega de outro mundo." />
     <title>Nexo Geek — entregas de outro mundo</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/config.js"></script>
+    <script type="module" src="./js/vitrine.js"></script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Nexo Geek, início">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>NEXO<span class="brand-accent">GEEK</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#colecao">Coleção</a>
+        <a href="#sobre">Como funciona</a>
+        <a href="./admin.html">Admin</a>
+      </nav>
+      <button class="cart-button" id="open-cart" type="button" aria-haspopup="dialog">
+        <span aria-hidden="true">♧</span><span class="cart-label">Sacola</span>
+        <span class="cart-count" id="cart-count" aria-label="0 itens">0</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> SUA PRÓXIMA AVENTURA COMEÇA AQUI</p>
+          <h1>Seu universo geek,<br /><span>na sua porta.</span></h1>
+          <p class="hero-description">RPG, anime e cultura pop reunidos num só lugar. Escolha seus favoritos e deixe a aventura chegar até você.</p>
+          <a class="primary-link" href="#colecao">Explorar coleção <span aria-hidden="true">↗</span></a>
+          <div class="hero-note"><span class="note-icon" aria-hidden="true">✦</span><span>Uma entrega de outro mundo</span></div>
+        </div>
+        <div class="hero-art" aria-label="Ilustração de dados, estrelas e itens geek">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <span class="spark spark-one">✦</span><span class="spark spark-two">✧</span>
+          <span class="hero-die">20</span><span class="floating-item item-book">📚</span>
+          <span class="floating-item item-star">⭐</span><span class="floating-item item-controller">🎮</span>
+          <span class="floating-item item-crystal">💎</span><span class="hero-caption">ITENS PARA<br />SUA JORNADA</span>
+        </div>
+        <div class="hero-bottom">
+          <span>RPG <b>·</b> ANIME <b>·</b> CULTURA GEEK</span>
+          <a href="#colecao">DESCUBRA A COLEÇÃO <span aria-hidden="true">↓</span></a>
+        </div>
+      </section>
+
+      <section class="collection section-shell" id="colecao">
+        <div class="section-heading">
+          <div><p class="eyebrow">ESCOLHIDOS PARA VOCÊ</p><h2>Achados <span>de outro mundo</span></h2></div>
+          <label class="search-box"><span aria-hidden="true">⌕</span>
+            <input id="search" type="search" placeholder="Buscar item..." aria-label="Buscar produtos" />
+          </label>
+        </div>
+        <div class="category-list" id="categories" aria-label="Filtrar por categoria"></div>
+        <p class="feedback-message" id="feedback" role="status">Carregando a coleção...</p>
+        <div class="product-grid" id="product-grid"></div>
+      </section>
+
+      <section class="delivery-banner" id="sobre">
+        <div class="banner-icon" aria-hidden="true">🛸</div>
+        <div><p class="eyebrow">DO NOSSO PORTAL ATÉ VOCÊ</p><h2>Seu próximo item favorito<br />está a um clique.</h2></div>
+        <a class="banner-link" href="#colecao">Escolher meus itens <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#inicio"><span class="brand-mark" aria-hidden="true">✦</span><span>NEXO<span class="brand-accent">GEEK</span></span></a>
+      <p>Feito para quem vive muitas aventuras.</p><span>© 2026 Nexo Geek · Loja demonstrativa</span>
+    </footer>
+
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-title">
+      <button class="close-button dialog-close" type="button" data-close="product-dialog" aria-label="Fechar detalhes">×</button>
+      <div id="product-detail"></div>
+    </dialog>
+
+    <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+      <aside class="cart-drawer">
+        <div class="drawer-heading"><div><p class="eyebrow">SEUS ACHADOS</p><h2 id="cart-title">Sacola <span id="drawer-count">(0)</span></h2></div>
+          <button class="close-button" type="button" data-close="cart-dialog" aria-label="Fechar sacola">×</button>
+        </div>
+        <div id="cart-content" class="cart-content"></div>
+      </aside>
+    </dialog>
   </body>
 </html>

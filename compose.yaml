@@ -1,10 +1,20 @@
 services:
-  app:
+  web:
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
     environment:
-      NODE_ENV: production
-      PORT: 3000
+      PORT: 3001
     restart: unless-stopped

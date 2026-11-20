@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171323" />
+    <title>Administração — Nexo Geek</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/config.js"></script>
+    <script type="module" src="./js/admin.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html"><span class="brand-mark" aria-hidden="true">✦</span><span>NEXO<span class="brand-accent">GEEK</span></span></a>
+      <nav class="main-nav" aria-label="Navegação principal"><a href="./index.html">Ver vitrine</a></nav>
+      <span class="admin-label">PAINEL ADMINISTRATIVO</span>
+    </header>
+    <main class="admin-main">
+      <div class="admin-heading"><div><p class="eyebrow">CATÁLOGO E ESTOQUE</p><h1>Gerenciar produtos</h1></div>
+        <a class="primary-link" href="./index.html">Voltar à vitrine <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="admin-notice" id="admin-status" role="status">Carregando produtos...</p>
+      <section class="admin-panel" aria-labelledby="product-form-title">
+        <h2 id="product-form-title">Novo produto</h2>
+        <form id="product-form" class="product-form">
+          <input id="product-id" name="id" type="hidden" />
+          <label>Nome<input name="name" required minlength="2" maxlength="100" /></label>
+          <label>Categoria<input name="category" required maxlength="50" list="category-suggestions" /></label>
+          <datalist id="category-suggestions"><option value="RPG"></option><option value="Anime"></option><option value="Geek"></option></datalist>
+          <label>Preço (R$)<input name="price" type="number" min="0.01" step="0.01" required /></label>
+          <label>Estoque<input name="stock" type="number" min="0" step="1" required /></label>
+          <label>Estoque mínimo<input name="minStock" type="number" min="0" step="1" required /></label>
+          <label>Emoji de reserva<input name="emoji" maxlength="8" value="✨" /></label>
+          <label class="form-wide">Descrição<textarea name="description" required minlength="3" maxlength="300"></textarea></label>
+          <label class="form-wide">URL segura da imagem (HTTPS)<input name="imageUrl" type="url" placeholder="https://..." /></label>
+          <label class="form-wide">Ou enviar imagem ao Cloudinary<input id="image-file" type="file" accept="image/*" /></label>
+          <div class="form-actions form-wide">
+            <button class="primary-button" type="submit" id="save-product">Salvar produto</button>
+            <button class="secondary-button" type="button" id="cancel-edit" hidden>Cancelar edição</button>
+          </div>
+        </form>
+      </section>
+      <section class="admin-panel" aria-labelledby="inventory-title">
+        <div class="table-heading"><h2 id="inventory-title">Produtos cadastrados</h2>
+          <label class="stock-adjustment">Quantidade <input id="stock-amount" type="number" min="1" step="1" value="1" /></label>
+        </div>
+        <div class="table-scroll"><table><thead><tr><th>Produto</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Status</th><th>Ações</th></tr></thead><tbody id="product-rows"></tbody></table></div>
+      </section>
+      <p class="admin-footnote">Painel demonstrativo sem autenticação. Não exponha a API publicamente com dados reais.</p>
+    </main>
+  </body>
+</html>

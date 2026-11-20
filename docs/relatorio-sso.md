@@ -17,6 +17,16 @@ A identidade da Nexo Geek celebra a cultura geek e o cinema, reunindo referênci
 anime, games, ficção científica, fantasia, animações, séries e filmes. A vitrine foi pensada para
 fãs que procuram acessórios, presentes e itens colecionáveis ligados a esses universos.
 
+### Recorte geek e cinematográfico do catálogo
+
+- **RPG e fantasia:** dados do aventureiro e diário do mestre, voltados a campanhas e narrativas.
+- **Anime e mangá:** figure de coleção e kit de leitura para fãs de animação e quadrinhos japoneses.
+- **Ficção científica e games:** caneca de missão espacial e luminária pixel, com referências a
+  universos de cinema, séries e jogos.
+
+Esse recorte conecta os produtos demonstrativos ao público geek e pode crescer com novas categorias
+de cinema e séries sem alterar a proposta de controle de catálogo e estoque.
+
 - **SSO:** configuração de um Windows Server (rede interna/Host-Only) provendo DHCP e DNS para o
   domínio local `.empresa.p2.br` e o IIS para hospedagem e testes de serviços; um Windows Cliente com
   duas placas de rede, uma na rede interna e outra em NAT/Bridge para acesso à internet.

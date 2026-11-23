@@ -1,5 +1,5 @@
 # Anexo Nerd - Bryan da Silva (and Sheldon Cuper)
-Atividade SSO - Professor Leonid
+Atividade SSO - Professor Leonid - Fatec São Roque 
 
 Obs : Feito em etapas, conclusão do 3º módulo 
 

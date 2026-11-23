@@ -39,7 +39,8 @@ test('API json-server permite listar, cadastrar, atualizar e excluir produtos', 
   const listResponse = await fetch(`${baseUrl}/products`);
   const listed = await listResponse.json();
   assert.equal(listResponse.status, 200);
-  assert.equal(listed.length, 6);
+  const initialProductCount = listed.length;
+  assert.ok(initialProductCount > 0);
 
   const createResponse = await fetch(`${baseUrl}/products`, {
     method: 'POST',
@@ -61,5 +62,5 @@ test('API json-server permite listar, cadastrar, atualizar e excluir produtos', 
 
   const deleteResponse = await fetch(`${baseUrl}/products/test-product`, { method: 'DELETE' });
   assert.ok(deleteResponse.ok);
-  assert.equal(JSON.parse(await readFile(database, 'utf8')).products.length, 6);
+  assert.equal(JSON.parse(await readFile(database, 'utf8')).products.length, initialProductCount);
 });

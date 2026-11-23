@@ -37,7 +37,7 @@ Troque `<url>` pela URL HTTPS que o Render mostrar no topo do serviço
 curl https://<url>/products
 ```
 
-O retorno deve ser o JSON com os seis produtos de `api/db.json`.
+O retorno deve ser o JSON com os oito produtos de `api/db.json`.
 
 ## 4. Conectar o front-end
 

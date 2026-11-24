@@ -3,6 +3,33 @@ Atividade SSO - Professor Leonid - Fatec São Roque
 
 Obs : Feito em etapas, conclusão do 3º módulo 
 
+[
+  {
+    "login": "bryantheconnor-art",
+    "id": 225469594,
+    "node_id": "U_kgDODXBkmg",
+    "avatar_url": "https://avatars.githubusercontent.com/u/225469594?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/bryantheconnor-art",
+    "html_url": "https://github.com/bryantheconnor-art",
+    "followers_url": "https://api.github.com/users/bryantheconnor-art/followers",
+    "following_url": "https://api.github.com/users/bryantheconnor-art/following{/other_user}",
+    "gists_url": "https://api.github.com/users/bryantheconnor-art/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/bryantheconnor-art/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/bryantheconnor-art/subscriptions",
+    "organizations_url": "https://api.github.com/users/bryantheconnor-art/orgs",
+    "repos_url": "https://api.github.com/users/bryantheconnor-art/repos",
+    "events_url": "https://api.github.com/users/bryantheconnor-art/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/bryantheconnor-art/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false,
+    "contributions": 39
+  }
+
+“Uma atribuição de coautoria foi incluída por engano em um commit e já foi removida. O histórico atual e a lista de contribuidores da API mostram minha conta; a página visual do GitHub ainda está recalculando - Pedi para revisar as vms e prints, para ver se o passo a passo foram seguidos, mas ela commitou sem eu pedir, exclui e a página não recarregou.”
+
+
 Loja demonstrativa de itens de RPG, anime e cultura geek. A vitrine e o painel administrativo usam HTML, CSS e JavaScript puro; o catálogo e o estoque são servidos pelo json-server.
 
 ## Executar localmente

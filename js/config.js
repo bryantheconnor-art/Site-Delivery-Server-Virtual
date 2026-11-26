@@ -1,5 +1,5 @@
 window.APP_CONFIG = {
-  apiBaseUrl: 'http://localhost:3001',
+  apiBaseUrl: 'https://site-delivery-server-virtualg.onrender.com',
   cloudinaryCloudName: 'ix37gggc',
-  cloudinaryUploadPreset: '',
+  cloudinaryUploadPreset: 'Anexo-Nerd2',
 };

@@ -1,6 +1,8 @@
 # Anexo Nerd - Bryan da Silva (and Sheldon Cuper)
 Atividade SSO - Professor Leonid - Fatec São Roque 
 
+Loja de Delivery Nerd - Comidas e Artigos Nerds
+
 Obs : Feito em etapas, conclusão do 3º módulo 
 
 [
